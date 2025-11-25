@@ -1,0 +1,30 @@
+{{ define "content" }}
+<h1 class="text-xl font-semibold mb-4">Users</h1>
+
+<div class="bg-white p-6 rounded shadow overflow-x-auto">
+  <table class="min-w-full">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range .Users }}
+      <tr class="border-t">
+        <td>{{ .ID }}</td>
+        <td>{{ .Username }}</td>
+        <td>{{ .Email }}</td>
+        <td>{{ .Role }}</td>
+        <td>{{ .Contact }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}
+
+{{ template "layout" . }}

@@ -1,0 +1,33 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white border-r">
+      <div class="p-6">
+        <h1 class="text-2xl font-bold">MOVION</h1>
+      </div>
+      <nav class="p-4">
+        <a href="/admin/dashboard" class="block py-2 px-4 rounded hover:bg-gray-100">Dashboard</a>
+        <a href="/admin/users" class="block py-2 px-4 rounded hover:bg-gray-100">Users</a>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="flex-1 p-6">
+      {{ block "content" . }}{{ end }}
+    </main>
+
+  </div>
+
+</body>
+</html>
+{{ end }}
